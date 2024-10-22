@@ -1,13 +1,12 @@
-const Product = require('../models/product');  // Để lấy thông tin sản phẩm từ DB
-const Category = require('../models/category');  // Để lấy thông tin danh mục từ DB
+const Product = require('../models/product'); 
+const Category = require('../models/category'); 
 
 exports.getDashboardPage = async (req, res) => {
   try {
-    // Lấy danh sách sản phẩm và danh mục đang hoạt động (is_deleted: false)
     const products = await Product.find({ is_deleted: false }).populate('category_id');
     const categories = await Category.find({ is_deleted: false });
 
-    // Render trang dashboard với dữ liệu sản phẩm và danh mục
+    // Render trang dashboard
     res.render('dashboard', { 
       products, 
       categories, 
