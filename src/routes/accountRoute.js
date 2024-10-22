@@ -1,4 +1,3 @@
-// routes/accountRoute.js
 const express = require('express');
 const { getLoginPage, getRegisterPage, login, register } = require('../controllers/accountController');
 const router = express.Router();

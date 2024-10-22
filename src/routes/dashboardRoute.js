@@ -4,7 +4,6 @@ const { getDashboardPage } = require('../controllers/dashboardController');  // 
 
 const router = express.Router();
 
-// Route cho Dashboard (yêu cầu người dùng đã đăng nhập)
 // router.get('/dashboard', authMiddleware, getDashboardPage);
 router.get('/dashboard', getDashboardPage);
 
