@@ -14,6 +14,8 @@ const productSchema = new Schema(
     price: {
       type: Number,
       require: true,
+      min:0,
+      max: 100000000,
     },
     category_id: {
       type: mongoose.Schema.Types.ObjectId,
